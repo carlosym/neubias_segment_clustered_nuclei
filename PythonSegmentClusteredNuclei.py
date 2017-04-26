@@ -29,7 +29,7 @@ def main(argv):
         InputPath = img
         print "Processing "+img
 
-        OutputPath = OutputFolderPath +"OUT_"+os.path.basename(InputPath)
+        OutputPath = OutputFolderPath +"/OUT_"+os.path.basename(InputPath)
 
         # Read image
         I = io.imread(InputPath)

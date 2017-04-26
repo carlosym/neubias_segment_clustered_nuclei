@@ -37,8 +37,9 @@ RUN apt-get -qq update && apt-get -qq install -y       \
 # RUN apt-get -qq update && apt-get -qq install -y --no-install-recommends       \
 
 RUN pip install --no-cache-dir scikit-image
-
-COPY  PythonSegmentClusteredNuclei.py /home/nucleisegmentation.py
+RUN wget https://raw.githubusercontent.com/carlosym/neubias_segment_clustered_nuclei/master/PythonSegmentClusteredNuclei.py
+RUN mv PythonSegmentClusteredNuclei.py /home/nucleisegmentation.py
+#COPY  PythonSegmentClusteredNuclei.py /home/nucleisegmentation.py
 RUN groupadd -r host && useradd -r -g host host && usermod -u 1000 host
 USER host
 
